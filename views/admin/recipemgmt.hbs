@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Recipe Table</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    i.fa-trash {
+      color: red;
+      cursor: pointer;
+    }
+    i.fa-edit {
+      color: green;
+      cursor: pointer;
+    }
+    .button {
+        display: block;
+        width: 150px;
+        padding: 10px;
+        margin: 100px auto;
+        border: none;
+        background-color: #4CAF50;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+         position: absolute;
+         right: 20px;
+         top: 20px;
+      }
+  </style>
+</head>
+<body>
+
+  <h1>Recipe Table</h1>
+    <a href="/admin/add" class="button">Add Recipe</a><br><br>
+  
+    <table>
+    <tr>
+      <th>Recipe Name</th>
+      <th>Ingredients</th>
+      <th>Recipe</th>
+      <th>Images</th>
+    </tr>
+    </tr>
+  {{#each recipe}}
+  <tr>
+    <td>{{recipe_name}}</td>
+   <td>{{ingredients}}</td>
+   <td>{{recipe}}</td>
+    <td>
+      <img src="/admin/view_image/{{image_id}}" alt="{{recipe_name}}" width="100" height="100" />
+
+    </td>
+  </tr>
+  {{/each}}
+  </table>
+
+</body>
+</html>

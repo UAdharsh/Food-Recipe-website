@@ -1,0 +1,39 @@
+
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-primary navbar-dark shadow-sm py-3 py-lg-0 px-3 px-lg-5">
+        <a href="index.hbs" class="navbar-brand d-flex d-lg-none">
+            <h1 class="m-0 display-4 text-secondary"><span class="text-white">Endure</span>Recipe</h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav mx-auto py-0">
+                     <a href="/" id="home" class="nav-item nav-link ">Home</a>
+                <a href="/recipe" id="recipe" class="nav-item nav-link active">Recipes</a>
+                <a href="/about" id="about" class="nav-item nav-link ">About</a>
+                <a href="/contact" id="contact" class="nav-item nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+<section>
+    <div class="container mt-5">
+        <div class="row">
+                {{#each recipe}}
+               <div class="col-md-3 mb-4">
+<div class="card" style="width: 18rem;">
+  <img  class="card-img-top" src="/view_image/{{image_id}}" alt="{{recipe_name}} width="200" height="200"">
+  <div class="card-body">
+    <h5 class="card-title">{{recipe_name}}</h5>
+    {{!-- <p class="card-text">{{ingredients}}</p> --}}
+    <a href="/login" class="btn btn-primary">view Recipe</a>
+  </div>
+</div>
+</div>
+   {{/each}}  
+        </div>
+    </div>
+</section>
